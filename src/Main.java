@@ -2,26 +2,18 @@ public class Main {
 
     public static void main(String[] args) {
         //here we call methods from lines 10 and 15)
-        printConversion(10.25);
+        printMegaBytesAndKiloBytes(0);
     }
 
         // write your code here
-    public static void printConversion (double kilometersPerHour){
-        if (kilometersPerHour<0){
+    public static void printMegaBytesAndKiloBytes (int kiloBytes){
+        if (kiloBytes<0){
             System.out.println("Invalid Value");
-        } else {
-            int milesPerHour = (int)(toMilesPerHour(kilometersPerHour));
-            System.out.println(kilometersPerHour + " km/h = " + milesPerHour + " mi/h");
         }
-    }
-
-    public static long toMilesPerHour (double kilometersPerHour){
-        long miles = Math.round(kilometersPerHour/1.609);
-
-        if (miles<0){
-            return -1;
-        } else {
-            return miles;
+        else {
+            int mbOfKiloBytes = kiloBytes / 1024;
+            int remain = kiloBytes % 1024;
+            System.out.println(kiloBytes + " KB = " + mbOfKiloBytes + " MB and " + remain + " KB");
         }
     }
 
