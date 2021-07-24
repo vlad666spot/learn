@@ -6,23 +6,24 @@ public class Main {
     }
 
         // write your code here
-        public static void printConversion (double kilometersPerHour){
-            if (kilometersPerHour<0){
-                System.out.println("Invalid Value");
-            } else {
-                double milesPerHour = toMilesPerHour(kilometersPerHour);
-                System.out.println(kilometersPerHour + " km/h = " + milesPerHour + " mi/h.");
-            }
+    public static void printConversion (double kilometersPerHour){
+        if (kilometersPerHour<0){
+            System.out.println("Invalid Value");
+        } else {
+            int milesPerHour = (int)(toMilesPerHour(kilometersPerHour));
+            System.out.println(kilometersPerHour + " km/h = " + milesPerHour + " mi/h.");
         }
+    }
 
-        public static long toMilesPerHour (double kilometersPerHour){
+    public static long toMilesPerHour (double kilometersPerHour){
         long miles = Math.round(kilometersPerHour/1.609);
 
         if (miles<0){
             return -1;
         } else {
             return miles;
-        }}
+        }
+    }
 
 
 
