@@ -2,33 +2,21 @@ public class Main {
 
     public static void main(String[] args) {
         //here we call methods from lines 10 and 15)
-        System.out.println(shouldWakeUp(true, 44));
+        System.out.println(isLeapYear(1900));
     }
 
         // write your code here
-        public static boolean shouldWakeUp(boolean barking, int hourOfDay){
-            boolean shouldWake = false;
-            if (!barking){
-                shouldWake = false;
+        public static boolean isLeapYear (int year){
+        boolean isLeapYear = false;
+            if (year>1 && year<=9999){
+                if(year%4==0){
+                    if (year%100==0){
+                        if (year%400==0){
+                            isLeapYear = true;
+                        }}}
+            } else {
+                isLeapYear = false;
             }
-
-            if (barking){
-                if (hourOfDay>23){
-                    shouldWake = false;
-                }
-                if (hourOfDay<0){
-                    shouldWake = false;
-                }
-                if (hourOfDay>=8){
-                    shouldWake = false;
-                }
-                if (hourOfDay>=0 && hourOfDay<8){
-                    shouldWake = true;
-                }
-                if (hourOfDay>22 && hourOfDay<24){
-                    shouldWake = true;
-                }
-            }
-            return shouldWake;
-    }
+            return isLeapYear;
+        }
 }
