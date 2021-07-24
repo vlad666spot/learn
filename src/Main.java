@@ -2,7 +2,7 @@ public class Main {
 
     public static void main(String[] args) {
         //here we call methods from lines 10 and 15)
-        System.out.println(isLeapYear(1900));
+        System.out.println(isLeapYear(1924));
     }
 
         // write your code here
@@ -13,7 +13,10 @@ public class Main {
                     if (year%100==0){
                         if (year%400==0){
                             isLeapYear = true;
-                        }}}
+                        }}else {
+                        isLeapYear = true;
+                    }
+                }
             } else {
                 isLeapYear = false;
             }
