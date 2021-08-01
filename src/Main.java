@@ -7,23 +7,19 @@ public class Main {
     public static void main(String[] args) {
         //here we call methods from lines 10 and 15)
 
-        areEqualByThreeDecimalPlaces(2.2, 5.2);
+        areEqualByThreeDecimalPlaces(-3.1756, -3.175);
     }
 
-  public static boolean areEqualByThreeDecimalPlaces(double first, double second){
-        String firstDoubleToString = String.valueOf(first);
-        int indexFirstOfDecimal = firstDoubleToString.indexOf(".");
-        int fistInt = Integer.parseInt(firstDoubleToString.substring(indexFirstOfDecimal,3).replace(".", ""));
+    public static boolean areEqualByThreeDecimalPlaces(double myFirstDouble, double mySecondDouble){
+        int myFirstCheck = (int)(myFirstDouble * 1000);
+        int mySecondCheck = (int)(mySecondDouble * 1000);
+        if(myFirstCheck - mySecondCheck == 0){
 
-        String secondDoubleToString = String.valueOf(second);
-        int indexSecondOfDecimal = secondDoubleToString.indexOf(".");
-        int secondInt = Integer.parseInt(secondDoubleToString.substring(indexSecondOfDecimal,3).replace(".", ""));
-
-        if (fistInt == secondInt){
             return true;
-        } else {
+        } else
+
             return false;
-        }
-  }
+
+    }
 }
 
