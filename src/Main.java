@@ -1,28 +1,26 @@
 public class Main {
+    private static final int YEAR_IN_MINUTES = 525600;
+    private static final int DAY_IN_MINUTES = 1440;
+
     public static void main(String[] args) {
-        //here we call methods from lines 10 and 15)
-        System.out.println(area(5.0));
-        System.out.println(area(-1));
-        System.out.println(area(5.0, 4.0));
-        System.out.println(area(-1.0, 4.0));
 
+        printYearsAndDays(561600);
     }
 
+    public static void printYearsAndDays(long minutes){
+        if (minutes < 0) {
+            System.out.println("Invalid Value");
+        } else {
 
-    public static double area (double radius){
-        if(radius<0){
-            return -1.0;
-        }
-        double circleArea = radius*radius*Math.PI;
-        return circleArea;
-    }
 
-    public static double area (double x, double y){
-        if(x<0 || y<0){
-            return -1.0;
+            int years;
+            int days;
+            years = (int) minutes / YEAR_IN_MINUTES;
+            days = (int) minutes % YEAR_IN_MINUTES / DAY_IN_MINUTES;
+
+
+            System.out.println(minutes + " min = " + years + " y and " + days + " d");
         }
-        double rectangleArea = x*y;
-        return rectangleArea;
     }
 
 }
