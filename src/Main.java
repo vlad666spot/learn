@@ -1,26 +1,37 @@
 public class Main {
-    private static final int YEAR_IN_MINUTES = 525600;
-    private static final int DAY_IN_MINUTES = 1440;
+
 
     public static void main(String[] args) {
+        printDayOfTheWeek(-2);
+}
 
-        System.out.println(isCatPlaying(true,40));
-    }
+    public static void printDayOfTheWeek (int day){
+        if(day<0 || day>6){
+            System.out.println("Invalid day");
+        }
 
-    public static boolean isCatPlaying(boolean summer, int temperature) {
-        if (summer==false) {
-            if(temperature>24 && temperature<=35){
-                return true;
-            } else {
-                return false;
-            }
-
-        } else {
-            if(temperature>24 && temperature<=45){
-                return true;
-            } else {
-                return false;
-            }
+        switch(day){
+            case 1:
+                System.out.println("Monday");
+                break;
+            case 2:
+                System.out.println("Tuesday");
+                break;
+            case 3:
+                System.out.println("Wednesday");
+                break;
+            case 4:
+                System.out.println("Thursday");
+                break;
+            case 5:
+                System.out.println("Friday");
+                break;
+            case 6:
+                System.out.println("Sunday");
+                break;
+            case 7:
+                System.out.println("Saturday");
+                break;
         }
     }
 }
