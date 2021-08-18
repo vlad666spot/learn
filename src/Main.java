@@ -4,20 +4,22 @@ public class Main {
 
     public static void main(String[] args) {
 
-        printEqual(1, 1,1);
+        System.out.println(isCatPlaying(true,40));
     }
 
-    public static void printEqual(int first, int second, int third) {
-        if (first < 0 || second < 0 || third < 0) {
-            System.out.println("Invalid Value");
-        } else {
-
-            if (first == second && second == third && third == first) {
-                System.out.println("All numbers are equal");
-            } else if (first != second && second != third && third != first) {
-                System.out.println("All numbers are different");
+    public static boolean isCatPlaying(boolean summer, int temperature) {
+        if (summer==false) {
+            if(temperature>24 && temperature<=35){
+                return true;
             } else {
-                System.out.println("Neither all are equal or different");
+                return false;
+            }
+
+        } else {
+            if(temperature>24 && temperature<=45){
+                return true;
+            } else {
+                return false;
             }
         }
     }
