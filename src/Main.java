@@ -4,23 +4,21 @@ public class Main {
 
     public static void main(String[] args) {
 
-        printYearsAndDays(561600);
+        printEqual(1, 1,1);
     }
 
-    public static void printYearsAndDays(long minutes){
-        if (minutes < 0) {
+    public static void printEqual(int first, int second, int third) {
+        if (first < 0 || second < 0 || third < 0) {
             System.out.println("Invalid Value");
         } else {
 
-
-            int years;
-            int days;
-            years = (int) minutes / YEAR_IN_MINUTES;
-            days = (int) minutes % YEAR_IN_MINUTES / DAY_IN_MINUTES;
-
-
-            System.out.println(minutes + " min = " + years + " y and " + days + " d");
+            if (first == second && second == third && third == first) {
+                System.out.println("All numbers are equal");
+            } else if (first != second && second != third && third != first) {
+                System.out.println("All numbers are different");
+            } else {
+                System.out.println("Neither all are equal or different");
+            }
         }
     }
-
 }
