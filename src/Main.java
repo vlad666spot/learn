@@ -2,20 +2,33 @@ public class Main {
 
 
     public static void main(String[] args) {
-        int sum = 0;
-        int counter = 0;
-            for (int i = 0; i <= 1000; i++) {
-                if ((i%3==0) && (i%5==0)){
-                        sum += i;
-                        counter++;
-                        System.out.println("Found number = "+i);
-                }
+        System.out.println(isOdd(24));
+        System.out.println(sumOdd(13, 13));
 
-                if(counter==5){
-                    break;
-                }
+    }
+
+    public static boolean isOdd (int number) {
+        if(number<=0){
+            return false;
         }
-        System.out.println("Sum = " + sum);
 
+        if (number%2!=0){
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public static int sumOdd (int start, int end){
+        if (start <= 0 || end <= 0 || end<start){
+            return -1;
+        }
+        int sum = 0;
+        for (int i = start; i <= end; i++) {
+            if (isOdd(i)==true){
+                sum += i;
+            }
+        }
+        return sum;
     }
 }
