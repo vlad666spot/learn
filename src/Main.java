@@ -2,9 +2,9 @@ public class Main {
 
 
     public static void main(String[] args) {
-        System.out.println(getEventDigitSum(123456789));
+        System.out.println(getEvenDigitSum(123456789));
     }
-    public static int getEventDigitSum(int number){
+    public static int getEvenDigitSum(int number){
         if(number<0){
             return -1;
         }
