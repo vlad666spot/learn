@@ -22,4 +22,13 @@ public class Main {
         }
         return sum;
     }
+
+    /* EXPLANATION
+    * value / 10 = remove one char (last)
+    * value * 10 = add one char (last, 0)
+    * value % 10 = take last char
+    *
+    *
+    *
+    * */
 }
