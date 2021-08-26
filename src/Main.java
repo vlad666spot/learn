@@ -1,28 +1,29 @@
+import java.util.Scanner;
+
 public class Main {
 
 
     public static void main(String[] args) {
-        //System.out.println(canPack(1,0,5));
-        //reverse(234);
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter your year of birth: ");
+        boolean hasNextInt = scanner.hasNextInt();
 
-        System.out.println(canPack(1,0,4));
-        //System.out.println(%5);
-    }
-    public static boolean canPack (int bigCount, int smallCount, int goal) {
-        if (bigCount < 0 || smallCount < 0 || goal < 0) {
-            return false;
-        }
-        //
-            int calc = bigCount * 5 + smallCount;
+        if(hasNextInt){
+            int yearOfBirth = scanner.nextInt();
+            scanner.nextLine();
+            System.out.println("Enter your name: ");
+            String name = scanner.nextLine();
 
-            if (calc >= goal){
-                    if(goal%5<=smallCount){
-                        return true;
-                    } else {
-                        return false;
-                    }
+            int age = 2021-yearOfBirth;
+
+            if(age>=0 && age<=100){
+                System.out.println("Age is "+ age + ", of the person: "+ name);
             } else {
-                return false;
+                System.out.println("Invalid year of birth");
             }
+        } else {
+            System.out.println("Unable to parse year of birth");
+        }
+        scanner.close();
     }
 }
