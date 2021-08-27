@@ -4,25 +4,32 @@ public class Main {
 
 
     public static void main(String[] args) {
+    inputThenPrintSumAndAverage();
+
+    }
+
+    public static void inputThenPrintSumAndAverage (){
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter your year of birth: ");
-        boolean hasNextInt = scanner.hasNextInt();
 
-        if(hasNextInt){
-            int yearOfBirth = scanner.nextInt();
-            scanner.nextLine();
-            System.out.println("Enter your name: ");
-            String name = scanner.nextLine();
-
-            int age = 2021-yearOfBirth;
-
-            if(age>=0 && age<=100){
-                System.out.println("Age is "+ age + ", of the person: "+ name);
+        int sum = 0;
+        int counter = 0;
+        while(true){
+            if (scanner.hasNextInt()){
+                int number = scanner.nextInt();
+                scanner.nextLine();
+                sum += number;
+                counter++;
             } else {
-                System.out.println("Invalid year of birth");
+                if(counter==0){
+
+                    System.out.println("SUM = " + 0 + " AVG = " + 0);
+                    break;
+                }
+                counter++;
+                System.out.println("SUM = " + sum + " AVG = " + Math.round(sum/counter));
+
+                break;
             }
-        } else {
-            System.out.println("Unable to parse year of birth");
         }
         scanner.close();
     }
