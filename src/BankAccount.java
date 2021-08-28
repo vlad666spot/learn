@@ -7,6 +7,9 @@ public class BankAccount {
     private String email;
     private int phoneNumber;
 
+    public BankAccount(){
+        System.out.println("empty Constructor is called");
+    }
 
     public int getAccountNumber(){
         return this.accountNumber;
