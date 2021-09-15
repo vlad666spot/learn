@@ -2,8 +2,8 @@ public class Main {
 
 
     public static void main(String[] args) {
-        Circle circle = new Circle(3.75);
-        System.out.println("circle radius= "+ circle.getRadius());
-        System.out.println("circle area= "+ circle.getArea());
+    Rectangle test = new Rectangle(-5.0,1.0);
+        System.out.println(test.getWidth());
+        System.out.println(test.getLength());
     }
 }
