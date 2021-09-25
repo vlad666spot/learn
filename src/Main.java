@@ -25,14 +25,21 @@ public class Main {
             }
       }
 
-      public static int[] sortArray(int[] array){
-          for (int i = 0; i < array.length-1; i++) {
-              while(array[i]<array[i+1]){
-                  int temp = array[i+1];
-                  array[i+1]=array[i];
-                  array[i]=temp;
-              }
-          }
-          return array;
-      }
+    public static int[] sortArray(int[] array){
+        boolean isSorted = false;
+        while(!isSorted) {
+            isSorted = true;
+            for (int i = 0; i < array.length - 1; i++) {
+                if (array[i] < array[i + 1]) {
+                    int temp = array[i + 1];
+                    array[i + 1] = array[i];
+                    array[i] = temp;
+                    isSorted = false;
+                }
+            }
+
+        }
+        return array;
     }
+}
+
