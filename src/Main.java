@@ -1,8 +1,38 @@
- public class Main {
+import java.util.Scanner;
+
+public class Main {
+    private static Scanner scanner = new Scanner(System.in);
+
     public static void main(String[] args) {
-        Hamburger hamburger = new Hamburger("Basic", "Sausage", 3.56,"White");
-        hamburger.addHamburgerAddition1("Tomato", 0.23);
-        hamburger.addHamburgerAddition2("Spices", 0.2);
-        System.out.println("Total price of Burger is - " + hamburger.itemizeHamburger());
+        int [] testVlad = getIntegers(5);
+        printArray(sortArray(testVlad));
+
+
     }
-}
+
+    public static int[] getIntegers(int capacity){
+        int[] array = new int[capacity];
+        System.out.println("Please enter "+ capacity + " integer values:\r");
+        for (int i = 0; i < capacity; i++) {
+            array[i]=scanner.nextInt();
+        }
+        return array;
+    }
+
+    public static void printArray(int[] array){
+        for (int i = 0; i < array.length; i++) {
+            System.out.println(array[i]);
+            }
+      }
+
+      public static int[] sortArray(int[] array){
+          for (int i = 0; i < array.length-1; i++) {
+              while(array[i]<array[i+1]){
+                  int temp = array[i+1];
+                  array[i+1]=array[i];
+                  array[i]=temp;
+              }
+          }
+          return array;
+      }
+    }
