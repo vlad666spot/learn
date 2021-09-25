@@ -26,6 +26,7 @@ public class Main {
       }
 
     public static int[] sortArray(int[] array){
+        //bubble sorting
         boolean isSorted = false;
         while(!isSorted) {
             isSorted = true;
