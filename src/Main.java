@@ -1,32 +1,32 @@
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) {
-        System.out.println("Please fill in counter");
+    private static Scanner scanner = new Scanner(System.in);
 
-        Scanner scanner = new Scanner(System.in);
-        int count = scanner.nextInt();
-        System.out.println(findMin(readIntegers(count)));
+    public static void main(String[] args) {
+        reverse(fillArray(readInteger()));
+
     }
 
-    public static int[] readIntegers(int count){
-        Scanner scanner = new Scanner(System.in);
+
+    public static int readInteger(){
+        System.out.println("Please fill in counter");
+        int count = scanner.nextInt();
+        return count;
+    }
+
+    public static int[] fillArray(int count){
         int[] array = new int[count];
-        System.out.println("Please fill in int");
         for (int i = 0; i < count; i++) {
+            System.out.println("Fill int next number (out of "+ count+" : ");
             array[i]=scanner.nextInt();
         }
         return array;
     }
 
-    public static int findMin(int [] array){
-        int minVal = Integer.MAX_VALUE;;
-        for (int i = 0; i < array.length; i++) {
-            if (minVal>array[i]){
-                minVal=array[i];
-            }
+    public static void reverse (int[] array){
+        for (int i = array.length-1; i >= 0; i--) {
+            System.out.println(array[i]);
         }
-        return minVal;
     }
-
 }
