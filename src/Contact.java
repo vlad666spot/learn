@@ -15,7 +15,8 @@ public class Contact {
         return this.phoneNumber;
     }
 
-    public static Contact createContact (String name, String phoneNumber){
-        return new Contact(name, phoneNumber);
+    public static Contact createContact(String name, String phone){
+        Contact contact = new Contact(name,phone);
+        return contact;
     }
 }
